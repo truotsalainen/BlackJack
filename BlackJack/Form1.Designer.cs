@@ -29,271 +29,387 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.pictureBox10 = new System.Windows.Forms.PictureBox();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox11 = new System.Windows.Forms.PictureBox();
-            this.pictureBox12 = new System.Windows.Forms.PictureBox();
-            this.dealButton = new System.Windows.Forms.Button();
-            this.hitButton = new System.Windows.Forms.Button();
-            this.standButton = new System.Windows.Forms.Button();
+            this.playerEighth = new System.Windows.Forms.PictureBox();
+            this.playerSeventh = new System.Windows.Forms.PictureBox();
+            this.dealerEighth = new System.Windows.Forms.PictureBox();
+            this.dealerSeventh = new System.Windows.Forms.PictureBox();
+            this.playerSixth = new System.Windows.Forms.PictureBox();
+            this.dealerSixth = new System.Windows.Forms.PictureBox();
+            this.playerFifth = new System.Windows.Forms.PictureBox();
+            this.playerThird = new System.Windows.Forms.PictureBox();
+            this.playerSecond = new System.Windows.Forms.PictureBox();
+            this.playerFirst = new System.Windows.Forms.PictureBox();
+            this.dealerFifth = new System.Windows.Forms.PictureBox();
+            this.dealerFourth = new System.Windows.Forms.PictureBox();
+            this.dealerThird = new System.Windows.Forms.PictureBox();
+            this.dealerSecond = new System.Windows.Forms.PictureBox();
+            this.dealerFirst = new System.Windows.Forms.PictureBox();
+            this.playerFourth = new System.Windows.Forms.PictureBox();
             this.moneyCount = new System.Windows.Forms.Label();
+            this.standButton = new System.Windows.Forms.Button();
+            this.hitButton = new System.Windows.Forms.Button();
+            this.dealButton = new System.Windows.Forms.Button();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.Bet = new System.Windows.Forms.NumericUpDown();
-            this.musicButton = new System.Windows.Forms.Button();
+            this.betLabel = new System.Windows.Forms.Label();
+            this.musicCheck = new System.Windows.Forms.CheckBox();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.playerEighth)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.playerSeventh)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dealerEighth)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dealerSeventh)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.playerSixth)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dealerSixth)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.playerFifth)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.playerThird)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.playerSecond)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.playerFirst)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dealerFifth)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dealerFourth)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dealerThird)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dealerSecond)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dealerFirst)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.playerFourth)).BeginInit();
+            this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Bet)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.ColumnCount = 6;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.Controls.Add(this.musicButton, 5, 2);
-            this.tableLayoutPanel1.Controls.Add(this.pictureBox12, 5, 1);
-            this.tableLayoutPanel1.Controls.Add(this.pictureBox11, 5, 0);
-            this.tableLayoutPanel1.Controls.Add(this.pictureBox10, 4, 1);
-            this.tableLayoutPanel1.Controls.Add(this.pictureBox8, 2, 1);
-            this.tableLayoutPanel1.Controls.Add(this.pictureBox7, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.pictureBox6, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.pictureBox5, 4, 0);
-            this.tableLayoutPanel1.Controls.Add(this.pictureBox4, 3, 0);
-            this.tableLayoutPanel1.Controls.Add(this.pictureBox3, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.pictureBox2, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.pictureBox1, 0, 0);
+            this.tableLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(51)))));
+            this.tableLayoutPanel1.ColumnCount = 8;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 156F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 156F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 156F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 156F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 156F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 156F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 156F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 156F));
+            this.tableLayoutPanel1.Controls.Add(this.playerEighth, 7, 1);
+            this.tableLayoutPanel1.Controls.Add(this.playerSeventh, 6, 1);
+            this.tableLayoutPanel1.Controls.Add(this.dealerEighth, 7, 0);
+            this.tableLayoutPanel1.Controls.Add(this.dealerSeventh, 6, 0);
+            this.tableLayoutPanel1.Controls.Add(this.playerSixth, 5, 1);
+            this.tableLayoutPanel1.Controls.Add(this.dealerSixth, 5, 0);
+            this.tableLayoutPanel1.Controls.Add(this.playerFifth, 4, 1);
+            this.tableLayoutPanel1.Controls.Add(this.playerThird, 2, 1);
+            this.tableLayoutPanel1.Controls.Add(this.playerSecond, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.playerFirst, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.dealerFifth, 4, 0);
+            this.tableLayoutPanel1.Controls.Add(this.dealerFourth, 3, 0);
+            this.tableLayoutPanel1.Controls.Add(this.dealerThird, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.dealerSecond, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.dealerFirst, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.playerFourth, 3, 1);
             this.tableLayoutPanel1.Controls.Add(this.moneyCount, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.Bet, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.dealButton, 2, 2);
-            this.tableLayoutPanel1.Controls.Add(this.pictureBox9, 3, 1);
-            this.tableLayoutPanel1.Controls.Add(this.hitButton, 3, 2);
-            this.tableLayoutPanel1.Controls.Add(this.standButton, 4, 2);
+            this.tableLayoutPanel1.Controls.Add(this.standButton, 5, 2);
+            this.tableLayoutPanel1.Controls.Add(this.hitButton, 4, 2);
+            this.tableLayoutPanel1.Controls.Add(this.dealButton, 3, 2);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.musicCheck, 7, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 45F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 45F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(800, 450);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 216F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 216F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1247, 495);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
-            // pictureBox10
+            // playerEighth
             // 
-            this.pictureBox10.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.pictureBox10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox10.Location = new System.Drawing.Point(535, 205);
-            this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(127, 196);
-            this.pictureBox10.TabIndex = 9;
-            this.pictureBox10.TabStop = false;
+            this.playerEighth.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(51)))));
+            this.playerEighth.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.playerEighth.Location = new System.Drawing.Point(1095, 219);
+            this.playerEighth.Name = "playerEighth";
+            this.playerEighth.Size = new System.Drawing.Size(150, 210);
+            this.playerEighth.TabIndex = 22;
+            this.playerEighth.TabStop = false;
             // 
-            // pictureBox9
+            // playerSeventh
             // 
-            this.pictureBox9.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.pictureBox9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox9.Location = new System.Drawing.Point(402, 205);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(127, 196);
-            this.pictureBox9.TabIndex = 8;
-            this.pictureBox9.TabStop = false;
+            this.playerSeventh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(51)))));
+            this.playerSeventh.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.playerSeventh.Location = new System.Drawing.Point(939, 219);
+            this.playerSeventh.Name = "playerSeventh";
+            this.playerSeventh.Size = new System.Drawing.Size(150, 210);
+            this.playerSeventh.TabIndex = 21;
+            this.playerSeventh.TabStop = false;
             // 
-            // pictureBox8
+            // dealerEighth
             // 
-            this.pictureBox8.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.pictureBox8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox8.Location = new System.Drawing.Point(269, 205);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(127, 196);
-            this.pictureBox8.TabIndex = 7;
-            this.pictureBox8.TabStop = false;
+            this.dealerEighth.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(51)))));
+            this.dealerEighth.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dealerEighth.Location = new System.Drawing.Point(1095, 3);
+            this.dealerEighth.Name = "dealerEighth";
+            this.dealerEighth.Size = new System.Drawing.Size(150, 210);
+            this.dealerEighth.TabIndex = 20;
+            this.dealerEighth.TabStop = false;
             // 
-            // pictureBox7
+            // dealerSeventh
             // 
-            this.pictureBox7.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.pictureBox7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox7.Location = new System.Drawing.Point(136, 205);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(127, 196);
-            this.pictureBox7.TabIndex = 6;
-            this.pictureBox7.TabStop = false;
+            this.dealerSeventh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(51)))));
+            this.dealerSeventh.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dealerSeventh.Location = new System.Drawing.Point(939, 3);
+            this.dealerSeventh.Name = "dealerSeventh";
+            this.dealerSeventh.Size = new System.Drawing.Size(150, 210);
+            this.dealerSeventh.TabIndex = 19;
+            this.dealerSeventh.TabStop = false;
             // 
-            // pictureBox6
+            // playerSixth
             // 
-            this.pictureBox6.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.pictureBox6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox6.Location = new System.Drawing.Point(3, 205);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(127, 196);
-            this.pictureBox6.TabIndex = 5;
-            this.pictureBox6.TabStop = false;
+            this.playerSixth.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(51)))));
+            this.playerSixth.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.playerSixth.Location = new System.Drawing.Point(783, 219);
+            this.playerSixth.Name = "playerSixth";
+            this.playerSixth.Size = new System.Drawing.Size(150, 210);
+            this.playerSixth.TabIndex = 11;
+            this.playerSixth.TabStop = false;
             // 
-            // pictureBox5
+            // dealerSixth
             // 
-            this.pictureBox5.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.pictureBox5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox5.Location = new System.Drawing.Point(535, 3);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(127, 196);
-            this.pictureBox5.TabIndex = 4;
-            this.pictureBox5.TabStop = false;
+            this.dealerSixth.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(51)))));
+            this.dealerSixth.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dealerSixth.Location = new System.Drawing.Point(783, 3);
+            this.dealerSixth.Name = "dealerSixth";
+            this.dealerSixth.Size = new System.Drawing.Size(150, 210);
+            this.dealerSixth.TabIndex = 10;
+            this.dealerSixth.TabStop = false;
             // 
-            // pictureBox4
+            // playerFifth
             // 
-            this.pictureBox4.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.pictureBox4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox4.Location = new System.Drawing.Point(402, 3);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(127, 196);
-            this.pictureBox4.TabIndex = 3;
-            this.pictureBox4.TabStop = false;
+            this.playerFifth.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(51)))));
+            this.playerFifth.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.playerFifth.Location = new System.Drawing.Point(627, 219);
+            this.playerFifth.Name = "playerFifth";
+            this.playerFifth.Size = new System.Drawing.Size(150, 210);
+            this.playerFifth.TabIndex = 9;
+            this.playerFifth.TabStop = false;
             // 
-            // pictureBox3
+            // playerThird
             // 
-            this.pictureBox3.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.pictureBox3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox3.Location = new System.Drawing.Point(269, 3);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(127, 196);
-            this.pictureBox3.TabIndex = 2;
-            this.pictureBox3.TabStop = false;
+            this.playerThird.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(51)))));
+            this.playerThird.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.playerThird.Location = new System.Drawing.Point(315, 219);
+            this.playerThird.Name = "playerThird";
+            this.playerThird.Size = new System.Drawing.Size(150, 210);
+            this.playerThird.TabIndex = 7;
+            this.playerThird.TabStop = false;
             // 
-            // pictureBox2
+            // playerSecond
             // 
-            this.pictureBox2.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox2.Location = new System.Drawing.Point(136, 3);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(127, 196);
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
+            this.playerSecond.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(51)))));
+            this.playerSecond.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.playerSecond.Location = new System.Drawing.Point(159, 219);
+            this.playerSecond.Name = "playerSecond";
+            this.playerSecond.Size = new System.Drawing.Size(150, 210);
+            this.playerSecond.TabIndex = 6;
+            this.playerSecond.TabStop = false;
             // 
-            // pictureBox1
+            // playerFirst
             // 
-            this.pictureBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(127, 196);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.playerFirst.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(51)))));
+            this.playerFirst.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.playerFirst.Location = new System.Drawing.Point(3, 219);
+            this.playerFirst.Name = "playerFirst";
+            this.playerFirst.Size = new System.Drawing.Size(150, 210);
+            this.playerFirst.TabIndex = 5;
+            this.playerFirst.TabStop = false;
             // 
-            // pictureBox11
+            // dealerFifth
             // 
-            this.pictureBox11.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.pictureBox11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox11.Location = new System.Drawing.Point(668, 3);
-            this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Size = new System.Drawing.Size(129, 196);
-            this.pictureBox11.TabIndex = 10;
-            this.pictureBox11.TabStop = false;
+            this.dealerFifth.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(51)))));
+            this.dealerFifth.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dealerFifth.Location = new System.Drawing.Point(627, 3);
+            this.dealerFifth.Name = "dealerFifth";
+            this.dealerFifth.Size = new System.Drawing.Size(150, 210);
+            this.dealerFifth.TabIndex = 4;
+            this.dealerFifth.TabStop = false;
             // 
-            // pictureBox12
+            // dealerFourth
             // 
-            this.pictureBox12.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.pictureBox12.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox12.Location = new System.Drawing.Point(668, 205);
-            this.pictureBox12.Name = "pictureBox12";
-            this.pictureBox12.Size = new System.Drawing.Size(129, 196);
-            this.pictureBox12.TabIndex = 11;
-            this.pictureBox12.TabStop = false;
+            this.dealerFourth.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(51)))));
+            this.dealerFourth.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dealerFourth.Location = new System.Drawing.Point(471, 3);
+            this.dealerFourth.Name = "dealerFourth";
+            this.dealerFourth.Size = new System.Drawing.Size(150, 210);
+            this.dealerFourth.TabIndex = 3;
+            this.dealerFourth.TabStop = false;
             // 
-            // dealButton
+            // dealerThird
             // 
-            this.dealButton.Location = new System.Drawing.Point(269, 407);
-            this.dealButton.Name = "dealButton";
-            this.dealButton.Size = new System.Drawing.Size(75, 23);
-            this.dealButton.TabIndex = 12;
-            this.dealButton.Text = "Deal";
-            this.dealButton.UseVisualStyleBackColor = true;
+            this.dealerThird.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(51)))));
+            this.dealerThird.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dealerThird.Location = new System.Drawing.Point(315, 3);
+            this.dealerThird.Name = "dealerThird";
+            this.dealerThird.Size = new System.Drawing.Size(150, 210);
+            this.dealerThird.TabIndex = 2;
+            this.dealerThird.TabStop = false;
             // 
-            // hitButton
+            // dealerSecond
             // 
-            this.hitButton.Location = new System.Drawing.Point(402, 407);
-            this.hitButton.Name = "hitButton";
-            this.hitButton.Size = new System.Drawing.Size(75, 23);
-            this.hitButton.TabIndex = 13;
-            this.hitButton.Text = "Hit";
-            this.hitButton.UseVisualStyleBackColor = true;
+            this.dealerSecond.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(51)))));
+            this.dealerSecond.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dealerSecond.Location = new System.Drawing.Point(159, 3);
+            this.dealerSecond.Name = "dealerSecond";
+            this.dealerSecond.Size = new System.Drawing.Size(150, 210);
+            this.dealerSecond.TabIndex = 1;
+            this.dealerSecond.TabStop = false;
             // 
-            // standButton
+            // dealerFirst
             // 
-            this.standButton.Location = new System.Drawing.Point(535, 407);
-            this.standButton.Name = "standButton";
-            this.standButton.Size = new System.Drawing.Size(75, 23);
-            this.standButton.TabIndex = 14;
-            this.standButton.Text = "Stand";
-            this.standButton.UseVisualStyleBackColor = true;
+            this.dealerFirst.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(51)))));
+            this.dealerFirst.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dealerFirst.Location = new System.Drawing.Point(3, 3);
+            this.dealerFirst.Name = "dealerFirst";
+            this.dealerFirst.Size = new System.Drawing.Size(150, 210);
+            this.dealerFirst.TabIndex = 0;
+            this.dealerFirst.TabStop = false;
+            // 
+            // playerFourth
+            // 
+            this.playerFourth.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(51)))));
+            this.playerFourth.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.playerFourth.Location = new System.Drawing.Point(471, 219);
+            this.playerFourth.Name = "playerFourth";
+            this.playerFourth.Size = new System.Drawing.Size(150, 210);
+            this.playerFourth.TabIndex = 8;
+            this.playerFourth.TabStop = false;
             // 
             // moneyCount
             // 
             this.moneyCount.AutoSize = true;
-            this.moneyCount.Location = new System.Drawing.Point(3, 404);
+            this.moneyCount.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.moneyCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.moneyCount.Location = new System.Drawing.Point(3, 432);
             this.moneyCount.Name = "moneyCount";
-            this.moneyCount.Size = new System.Drawing.Size(35, 13);
+            this.moneyCount.Size = new System.Drawing.Size(150, 63);
             this.moneyCount.TabIndex = 15;
-            this.moneyCount.Text = "label1";
+            this.moneyCount.Text = "funds";
+            this.moneyCount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // standButton
+            // 
+            this.standButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.standButton.AutoSize = true;
+            this.standButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.standButton.Location = new System.Drawing.Point(820, 446);
+            this.standButton.Name = "standButton";
+            this.standButton.Size = new System.Drawing.Size(75, 35);
+            this.standButton.TabIndex = 14;
+            this.standButton.Text = "Stand";
+            this.standButton.UseVisualStyleBackColor = true;
+            this.standButton.Click += new System.EventHandler(this.standButton_Click);
+            // 
+            // hitButton
+            // 
+            this.hitButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.hitButton.AutoSize = true;
+            this.hitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hitButton.Location = new System.Drawing.Point(664, 446);
+            this.hitButton.Name = "hitButton";
+            this.hitButton.Size = new System.Drawing.Size(75, 35);
+            this.hitButton.TabIndex = 13;
+            this.hitButton.Text = "Hit";
+            this.hitButton.UseVisualStyleBackColor = true;
+            this.hitButton.Click += new System.EventHandler(this.hitButton_Click);
+            // 
+            // dealButton
+            // 
+            this.dealButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dealButton.AutoSize = true;
+            this.dealButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dealButton.Location = new System.Drawing.Point(508, 446);
+            this.dealButton.Name = "dealButton";
+            this.dealButton.Size = new System.Drawing.Size(75, 35);
+            this.dealButton.TabIndex = 12;
+            this.dealButton.Text = "Deal";
+            this.dealButton.UseVisualStyleBackColor = true;
+            this.dealButton.Click += new System.EventHandler(this.dealButton_Click);
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 2;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Controls.Add(this.Bet, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.betLabel, 0, 0);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(159, 435);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 1;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(150, 57);
+            this.tableLayoutPanel2.TabIndex = 23;
             // 
             // Bet
             // 
-            this.Bet.Location = new System.Drawing.Point(136, 407);
+            this.Bet.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Bet.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Bet.Location = new System.Drawing.Point(82, 13);
             this.Bet.Name = "Bet";
-            this.Bet.Size = new System.Drawing.Size(120, 20);
-            this.Bet.TabIndex = 16;
+            this.Bet.Size = new System.Drawing.Size(61, 30);
+            this.Bet.TabIndex = 0;
+            this.Bet.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // musicButton
+            // betLabel
             // 
-            this.musicButton.Location = new System.Drawing.Point(668, 407);
-            this.musicButton.Name = "musicButton";
-            this.musicButton.Size = new System.Drawing.Size(75, 23);
-            this.musicButton.TabIndex = 18;
-            this.musicButton.Text = "Music On/Off";
-            this.musicButton.UseVisualStyleBackColor = true;
+            this.betLabel.AutoSize = true;
+            this.betLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.betLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.betLabel.Location = new System.Drawing.Point(3, 0);
+            this.betLabel.Name = "betLabel";
+            this.betLabel.Size = new System.Drawing.Size(69, 57);
+            this.betLabel.TabIndex = 1;
+            this.betLabel.Text = "Bet:";
+            this.betLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // musicCheck
+            // 
+            this.musicCheck.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.musicCheck.Appearance = System.Windows.Forms.Appearance.Button;
+            this.musicCheck.AutoSize = true;
+            this.musicCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.musicCheck.Location = new System.Drawing.Point(1117, 446);
+            this.musicCheck.Name = "musicCheck";
+            this.musicCheck.Size = new System.Drawing.Size(105, 35);
+            this.musicCheck.TabIndex = 24;
+            this.musicCheck.Text = "Music Off";
+            this.musicCheck.UseVisualStyleBackColor = true;
+            this.musicCheck.CheckedChanged += new System.EventHandler(this.musicCheck_CheckedChanged);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.AutoSize = true;
+            this.ClientSize = new System.Drawing.Size(1247, 495);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "Form1";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.playerEighth)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.playerSeventh)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dealerEighth)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dealerSeventh)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.playerSixth)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dealerSixth)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.playerFifth)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.playerThird)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.playerSecond)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.playerFirst)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dealerFifth)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dealerFourth)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dealerThird)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dealerSecond)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dealerFirst)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.playerFourth)).EndInit();
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Bet)).EndInit();
             this.ResumeLayout(false);
 
@@ -302,24 +418,30 @@
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.PictureBox pictureBox10;
-        private System.Windows.Forms.PictureBox pictureBox9;
-        private System.Windows.Forms.PictureBox pictureBox8;
-        private System.Windows.Forms.PictureBox pictureBox7;
-        private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox12;
-        private System.Windows.Forms.PictureBox pictureBox11;
+        private System.Windows.Forms.PictureBox playerFifth;
+        private System.Windows.Forms.PictureBox playerFourth;
+        private System.Windows.Forms.PictureBox playerThird;
+        private System.Windows.Forms.PictureBox playerSecond;
+        private System.Windows.Forms.PictureBox playerFirst;
+        private System.Windows.Forms.PictureBox dealerFifth;
+        private System.Windows.Forms.PictureBox dealerFourth;
+        private System.Windows.Forms.PictureBox dealerThird;
+        private System.Windows.Forms.PictureBox dealerSecond;
+        private System.Windows.Forms.PictureBox dealerFirst;
+        private System.Windows.Forms.PictureBox playerSixth;
+        private System.Windows.Forms.PictureBox dealerSixth;
         private System.Windows.Forms.Button dealButton;
         private System.Windows.Forms.Button hitButton;
         private System.Windows.Forms.Button standButton;
         private System.Windows.Forms.Label moneyCount;
         private System.Windows.Forms.NumericUpDown Bet;
-        private System.Windows.Forms.Button musicButton;
+        private System.Windows.Forms.PictureBox playerEighth;
+        private System.Windows.Forms.PictureBox playerSeventh;
+        private System.Windows.Forms.PictureBox dealerEighth;
+        private System.Windows.Forms.PictureBox dealerSeventh;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.Label betLabel;
+        private System.Windows.Forms.CheckBox musicCheck;
     }
 }
 

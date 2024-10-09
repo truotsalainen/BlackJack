@@ -33,8 +33,38 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Win32.Registry, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Win32.Registry.4.7.0\lib\net461\Microsoft.Win32.Registry.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio, Version=2.2.1.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+      <HintPath>..\packages\NAudio.2.2.1\lib\net472\NAudio.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio.Asio, Version=2.2.1.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+      <HintPath>..\packages\NAudio.Asio.2.2.1\lib\netstandard2.0\NAudio.Asio.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio.Core, Version=2.2.1.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+      <HintPath>..\packages\NAudio.Core.2.2.1\lib\netstandard2.0\NAudio.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio.Midi, Version=2.2.1.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+      <HintPath>..\packages\NAudio.Midi.2.2.1\lib\netstandard2.0\NAudio.Midi.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio.Wasapi, Version=2.2.1.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+      <HintPath>..\packages\NAudio.Wasapi.2.2.1\lib\netstandard2.0\NAudio.Wasapi.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio.WinForms, Version=2.2.1.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+      <HintPath>..\packages\NAudio.WinForms.2.2.1\lib\net472\NAudio.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio.WinMM, Version=2.2.1.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+      <HintPath>..\packages\NAudio.WinMM.2.2.1\lib\netstandard2.0\NAudio.WinMM.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Security.AccessControl, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.AccessControl.4.7.0\lib\net461\System.Security.AccessControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Principal.Windows, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Principal.Windows.4.7.0\lib\net461\System.Security.Principal.Windows.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -65,7 +95,9 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -78,6 +110,166 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\aceClubs.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\aceDiamonds.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\aceHearts.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\aceSpades.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cardBack.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eightClubs.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eightDiamonds.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eightHearts.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eightSpades.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fiveClubs.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fiveDiamonds.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fiveHearts.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fiveSpades.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fourClubs.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fourDiamonds.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fourHearts.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fourSpades.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\jackClubs.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\jackDiamonds.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\jackHearts.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\jackSpades.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kingClubs.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kingDiamonds.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kingHearts.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kingSpades.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nineClubs.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nineDiamonds.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nineHearts.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nineSpades.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\queenClubs.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\queenDiamonds.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\queenHearts.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\queenSpades.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sevenClubs.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sevenDiamonds.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sevenHearts.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sevenSpades.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sixClubs.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sixDiamonds.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sixHearts.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sixSpades.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tenClubs.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tenDiamonds.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tenHearts.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tenSpades.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\threeClubs.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\threeDiamonds.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\threeHearts.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\threeSpades.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\twoClubs.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\twoDiamonds.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\twoHearts.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\twoSpades.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
