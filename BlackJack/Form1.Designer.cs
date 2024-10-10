@@ -28,7 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.components = new System.ComponentModel.Container();
+            this.cardsTable = new System.Windows.Forms.TableLayoutPanel();
             this.playerEighth = new System.Windows.Forms.PictureBox();
             this.playerSeventh = new System.Windows.Forms.PictureBox();
             this.dealerEighth = new System.Windows.Forms.PictureBox();
@@ -46,14 +47,20 @@
             this.dealerFirst = new System.Windows.Forms.PictureBox();
             this.playerFourth = new System.Windows.Forms.PictureBox();
             this.moneyCount = new System.Windows.Forms.Label();
-            this.standButton = new System.Windows.Forms.Button();
-            this.hitButton = new System.Windows.Forms.Button();
-            this.dealButton = new System.Windows.Forms.Button();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.betPanel = new System.Windows.Forms.TableLayoutPanel();
             this.Bet = new System.Windows.Forms.NumericUpDown();
             this.betLabel = new System.Windows.Forms.Label();
+            this.dollarLabel = new System.Windows.Forms.Label();
             this.musicCheck = new System.Windows.Forms.CheckBox();
-            this.tableLayoutPanel1.SuspendLayout();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.doubleButton = new System.Windows.Forms.Button();
+            this.standButton = new System.Windows.Forms.Button();
+            this.hitButton = new System.Windows.Forms.Button();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.dealButton = new System.Windows.Forms.Button();
+            this.playerScore = new System.Windows.Forms.Label();
+            this.dealerScore = new System.Windows.Forms.Label();
+            this.cardsTable.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.playerEighth)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.playerSeventh)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dealerEighth)).BeginInit();
@@ -70,54 +77,57 @@
             ((System.ComponentModel.ISupportInitialize)(this.dealerSecond)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dealerFirst)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.playerFourth)).BeginInit();
-            this.tableLayoutPanel2.SuspendLayout();
+            this.betPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Bet)).BeginInit();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tableLayoutPanel1
+            // cardsTable
             // 
-            this.tableLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(51)))));
-            this.tableLayoutPanel1.ColumnCount = 8;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 156F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 156F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 156F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 156F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 156F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 156F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 156F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 156F));
-            this.tableLayoutPanel1.Controls.Add(this.playerEighth, 7, 1);
-            this.tableLayoutPanel1.Controls.Add(this.playerSeventh, 6, 1);
-            this.tableLayoutPanel1.Controls.Add(this.dealerEighth, 7, 0);
-            this.tableLayoutPanel1.Controls.Add(this.dealerSeventh, 6, 0);
-            this.tableLayoutPanel1.Controls.Add(this.playerSixth, 5, 1);
-            this.tableLayoutPanel1.Controls.Add(this.dealerSixth, 5, 0);
-            this.tableLayoutPanel1.Controls.Add(this.playerFifth, 4, 1);
-            this.tableLayoutPanel1.Controls.Add(this.playerThird, 2, 1);
-            this.tableLayoutPanel1.Controls.Add(this.playerSecond, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.playerFirst, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.dealerFifth, 4, 0);
-            this.tableLayoutPanel1.Controls.Add(this.dealerFourth, 3, 0);
-            this.tableLayoutPanel1.Controls.Add(this.dealerThird, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.dealerSecond, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.dealerFirst, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.playerFourth, 3, 1);
-            this.tableLayoutPanel1.Controls.Add(this.moneyCount, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.standButton, 5, 2);
-            this.tableLayoutPanel1.Controls.Add(this.hitButton, 4, 2);
-            this.tableLayoutPanel1.Controls.Add(this.dealButton, 3, 2);
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.musicCheck, 7, 2);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 3;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 216F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 216F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1247, 495);
-            this.tableLayoutPanel1.TabIndex = 0;
+            this.cardsTable.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(51)))));
+            this.cardsTable.ColumnCount = 8;
+            this.cardsTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 156F));
+            this.cardsTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 156F));
+            this.cardsTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 156F));
+            this.cardsTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 156F));
+            this.cardsTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 156F));
+            this.cardsTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 156F));
+            this.cardsTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 156F));
+            this.cardsTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 156F));
+            this.cardsTable.Controls.Add(this.playerEighth, 7, 1);
+            this.cardsTable.Controls.Add(this.playerSeventh, 6, 1);
+            this.cardsTable.Controls.Add(this.dealerEighth, 7, 0);
+            this.cardsTable.Controls.Add(this.dealerSeventh, 6, 0);
+            this.cardsTable.Controls.Add(this.playerSixth, 5, 1);
+            this.cardsTable.Controls.Add(this.dealerSixth, 5, 0);
+            this.cardsTable.Controls.Add(this.playerFifth, 4, 1);
+            this.cardsTable.Controls.Add(this.playerThird, 2, 1);
+            this.cardsTable.Controls.Add(this.playerSecond, 1, 1);
+            this.cardsTable.Controls.Add(this.playerFirst, 0, 1);
+            this.cardsTable.Controls.Add(this.dealerFifth, 4, 0);
+            this.cardsTable.Controls.Add(this.dealerFourth, 3, 0);
+            this.cardsTable.Controls.Add(this.dealerThird, 2, 0);
+            this.cardsTable.Controls.Add(this.dealerSecond, 1, 0);
+            this.cardsTable.Controls.Add(this.dealerFirst, 0, 0);
+            this.cardsTable.Controls.Add(this.playerFourth, 3, 1);
+            this.cardsTable.Controls.Add(this.moneyCount, 0, 2);
+            this.cardsTable.Controls.Add(this.betPanel, 1, 2);
+            this.cardsTable.Controls.Add(this.musicCheck, 7, 2);
+            this.cardsTable.Controls.Add(this.doubleButton, 6, 2);
+            this.cardsTable.Controls.Add(this.tableLayoutPanel1, 5, 2);
+            this.cardsTable.Controls.Add(this.dealButton, 4, 2);
+            this.cardsTable.Controls.Add(this.playerScore, 2, 2);
+            this.cardsTable.Controls.Add(this.dealerScore, 3, 2);
+            this.cardsTable.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cardsTable.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
+            this.cardsTable.Location = new System.Drawing.Point(0, 0);
+            this.cardsTable.Name = "cardsTable";
+            this.cardsTable.RowCount = 3;
+            this.cardsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 216F));
+            this.cardsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 216F));
+            this.cardsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.cardsTable.Size = new System.Drawing.Size(1247, 495);
+            this.cardsTable.TabIndex = 0;
             // 
             // playerEighth
             // 
@@ -291,64 +301,27 @@
             this.moneyCount.Text = "funds";
             this.moneyCount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // standButton
+            // betPanel
             // 
-            this.standButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.standButton.AutoSize = true;
-            this.standButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.standButton.Location = new System.Drawing.Point(820, 446);
-            this.standButton.Name = "standButton";
-            this.standButton.Size = new System.Drawing.Size(75, 35);
-            this.standButton.TabIndex = 14;
-            this.standButton.Text = "Stand";
-            this.standButton.UseVisualStyleBackColor = true;
-            this.standButton.Click += new System.EventHandler(this.standButton_Click);
-            // 
-            // hitButton
-            // 
-            this.hitButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.hitButton.AutoSize = true;
-            this.hitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.hitButton.Location = new System.Drawing.Point(664, 446);
-            this.hitButton.Name = "hitButton";
-            this.hitButton.Size = new System.Drawing.Size(75, 35);
-            this.hitButton.TabIndex = 13;
-            this.hitButton.Text = "Hit";
-            this.hitButton.UseVisualStyleBackColor = true;
-            this.hitButton.Click += new System.EventHandler(this.hitButton_Click);
-            // 
-            // dealButton
-            // 
-            this.dealButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dealButton.AutoSize = true;
-            this.dealButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dealButton.Location = new System.Drawing.Point(508, 446);
-            this.dealButton.Name = "dealButton";
-            this.dealButton.Size = new System.Drawing.Size(75, 35);
-            this.dealButton.TabIndex = 12;
-            this.dealButton.Text = "Deal";
-            this.dealButton.UseVisualStyleBackColor = true;
-            this.dealButton.Click += new System.EventHandler(this.dealButton_Click);
-            // 
-            // tableLayoutPanel2
-            // 
-            this.tableLayoutPanel2.ColumnCount = 2;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Controls.Add(this.Bet, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.betLabel, 0, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(159, 435);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 1;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(150, 57);
-            this.tableLayoutPanel2.TabIndex = 23;
+            this.betPanel.ColumnCount = 3;
+            this.betPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.betPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.betPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.betPanel.Controls.Add(this.Bet, 1, 0);
+            this.betPanel.Controls.Add(this.betLabel, 0, 0);
+            this.betPanel.Controls.Add(this.dollarLabel, 2, 0);
+            this.betPanel.Location = new System.Drawing.Point(159, 435);
+            this.betPanel.Name = "betPanel";
+            this.betPanel.RowCount = 1;
+            this.betPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.betPanel.Size = new System.Drawing.Size(150, 57);
+            this.betPanel.TabIndex = 23;
             // 
             // Bet
             // 
             this.Bet.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Bet.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Bet.Location = new System.Drawing.Point(82, 13);
+            this.Bet.Location = new System.Drawing.Point(56, 13);
             this.Bet.Name = "Bet";
             this.Bet.Size = new System.Drawing.Size(61, 30);
             this.Bet.TabIndex = 0;
@@ -361,10 +334,21 @@
             this.betLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.betLabel.Location = new System.Drawing.Point(3, 0);
             this.betLabel.Name = "betLabel";
-            this.betLabel.Size = new System.Drawing.Size(69, 57);
+            this.betLabel.Size = new System.Drawing.Size(47, 57);
             this.betLabel.TabIndex = 1;
             this.betLabel.Text = "Bet:";
             this.betLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // dollarLabel
+            // 
+            this.dollarLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dollarLabel.AutoSize = true;
+            this.dollarLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dollarLabel.Location = new System.Drawing.Point(123, 16);
+            this.dollarLabel.Name = "dollarLabel";
+            this.dollarLabel.Size = new System.Drawing.Size(23, 25);
+            this.dollarLabel.TabIndex = 2;
+            this.dollarLabel.Text = "$";
             // 
             // musicCheck
             // 
@@ -380,18 +364,104 @@
             this.musicCheck.UseVisualStyleBackColor = true;
             this.musicCheck.CheckedChanged += new System.EventHandler(this.musicCheck_CheckedChanged);
             // 
+            // doubleButton
+            // 
+            this.doubleButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.doubleButton.AutoSize = true;
+            this.doubleButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.doubleButton.Location = new System.Drawing.Point(944, 446);
+            this.doubleButton.Name = "doubleButton";
+            this.doubleButton.Size = new System.Drawing.Size(139, 35);
+            this.doubleButton.TabIndex = 28;
+            this.doubleButton.Text = "Double Down";
+            this.doubleButton.UseVisualStyleBackColor = true;
+            this.doubleButton.Click += new System.EventHandler(this.doubleButton_Click);
+            // 
+            // standButton
+            // 
+            this.standButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.standButton.AutoSize = true;
+            this.standButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.standButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.standButton.Location = new System.Drawing.Point(68, 11);
+            this.standButton.Name = "standButton";
+            this.standButton.Size = new System.Drawing.Size(74, 35);
+            this.standButton.TabIndex = 14;
+            this.standButton.Text = "Stand";
+            this.standButton.UseVisualStyleBackColor = true;
+            this.standButton.Click += new System.EventHandler(this.standButton_Click);
+            // 
+            // hitButton
+            // 
+            this.hitButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.hitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hitButton.Location = new System.Drawing.Point(3, 11);
+            this.hitButton.Name = "hitButton";
+            this.hitButton.Size = new System.Drawing.Size(54, 35);
+            this.hitButton.TabIndex = 13;
+            this.hitButton.Text = "Hit";
+            this.hitButton.UseVisualStyleBackColor = true;
+            this.hitButton.Click += new System.EventHandler(this.hitButton_Click);
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
+            this.tableLayoutPanel1.Controls.Add(this.hitButton, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.standButton, 1, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(783, 435);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(150, 57);
+            this.tableLayoutPanel1.TabIndex = 25;
+            // 
+            // dealButton
+            // 
+            this.dealButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dealButton.AutoSize = true;
+            this.dealButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dealButton.Location = new System.Drawing.Point(664, 446);
+            this.dealButton.Name = "dealButton";
+            this.dealButton.Size = new System.Drawing.Size(75, 35);
+            this.dealButton.TabIndex = 12;
+            this.dealButton.Text = "Deal";
+            this.dealButton.UseVisualStyleBackColor = true;
+            this.dealButton.Click += new System.EventHandler(this.dealButton_Click);
+            // 
+            // playerScore
+            // 
+            this.playerScore.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.playerScore.AutoSize = true;
+            this.playerScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.playerScore.Location = new System.Drawing.Point(390, 451);
+            this.playerScore.Name = "playerScore";
+            this.playerScore.Size = new System.Drawing.Size(0, 25);
+            this.playerScore.TabIndex = 29;
+            // 
+            // dealerScore
+            // 
+            this.dealerScore.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dealerScore.AutoSize = true;
+            this.dealerScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dealerScore.Location = new System.Drawing.Point(546, 451);
+            this.dealerScore.Name = "dealerScore";
+            this.dealerScore.Size = new System.Drawing.Size(0, 25);
+            this.dealerScore.TabIndex = 30;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1247, 495);
-            this.Controls.Add(this.tableLayoutPanel1);
+            this.Controls.Add(this.cardsTable);
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "Form1";
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
+            this.cardsTable.ResumeLayout(false);
+            this.cardsTable.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.playerEighth)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.playerSeventh)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dealerEighth)).EndInit();
@@ -408,16 +478,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.dealerSecond)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dealerFirst)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.playerFourth)).EndInit();
-            this.tableLayoutPanel2.ResumeLayout(false);
-            this.tableLayoutPanel2.PerformLayout();
+            this.betPanel.ResumeLayout(false);
+            this.betPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Bet)).EndInit();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TableLayoutPanel cardsTable;
         private System.Windows.Forms.PictureBox playerFifth;
         private System.Windows.Forms.PictureBox playerFourth;
         private System.Windows.Forms.PictureBox playerThird;
@@ -430,18 +502,24 @@
         private System.Windows.Forms.PictureBox dealerFirst;
         private System.Windows.Forms.PictureBox playerSixth;
         private System.Windows.Forms.PictureBox dealerSixth;
-        private System.Windows.Forms.Button dealButton;
-        private System.Windows.Forms.Button hitButton;
-        private System.Windows.Forms.Button standButton;
         private System.Windows.Forms.Label moneyCount;
         private System.Windows.Forms.NumericUpDown Bet;
         private System.Windows.Forms.PictureBox playerEighth;
         private System.Windows.Forms.PictureBox playerSeventh;
         private System.Windows.Forms.PictureBox dealerEighth;
         private System.Windows.Forms.PictureBox dealerSeventh;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.TableLayoutPanel betPanel;
         private System.Windows.Forms.Label betLabel;
         private System.Windows.Forms.CheckBox musicCheck;
+        private System.Windows.Forms.Label dollarLabel;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button dealButton;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Button hitButton;
+        private System.Windows.Forms.Button standButton;
+        private System.Windows.Forms.Button doubleButton;
+        private System.Windows.Forms.Label playerScore;
+        private System.Windows.Forms.Label dealerScore;
     }
 }
 

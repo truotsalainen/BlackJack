@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -25,36 +26,36 @@ namespace BlackJack
             hitButton.Visible = false;
             standButton.Enabled = false;
             standButton.Visible = false;
+            doubleButton.Enabled = false;
+            doubleButton.Visible = false;
             GenerateDeck();
             UpdateMoneyCount();
         }
         // Random object for dealing random cards
         Random random = new Random();
 
-        // Variable to track money
-        // Sets initial money at 100
+        // Variable to track money, initialize at 100
         int playerMoney = 100;
 
         // Variable that lets user set the wager
         int playerBet { get; set; }
 
-        // sum of player's point values
+        // variables for point sum calculation
         int playerSum = 0;
+        int dealerSum = 0;
 
         // number of aces dealt to the player
-        int aceCount = 0;
+        int aceCountPlayer = 0;
+        int aceCountDealer = 0;
 
-        // List for tracking cards dealt to the player
+        // List for tracking hands
         List<Card> PlayerHand = new List<Card>();
-
-        // List for cards dealt to the dealer
         List<Card> DealerHand = new List<Card>();
 
         //List for the whole deck
         List<Card> Deck = new List<Card>();
 
-        // Variable for storing dealer's
-        // pocket card before reveal
+        // Store dealer's seecond card before reveal
         public Card pocketCard;
 
         // Blackjack marker
@@ -87,7 +88,6 @@ namespace BlackJack
                 MessageBox.Show("Error playing background music: " + ex.Message);
             }
         }
-
         private void StopBackgroundMusic()
         {
             if (backgroundMusicPlayer != null)
@@ -103,7 +103,6 @@ namespace BlackJack
                 cancellationTokenSource.Dispose();
             }
         }
-
         // Play sound effects (non-blocking, can be played while background music is running)
         private void PlaySoundEffect(string soundFile)
         {
@@ -128,7 +127,6 @@ namespace BlackJack
                 MessageBox.Show("Error playing sound effect: " + ex.Message);
             }
         }
-
         private void musicCheck_CheckedChanged(object sender, EventArgs e)
         {
             if (musicCheck.Checked && !bgPlaying)
@@ -137,18 +135,16 @@ namespace BlackJack
                 bgPlaying = true;
                 cancellationTokenSource = new CancellationTokenSource();
                 Task.Run(() => PlayBackgroundMusic(cancellationTokenSource.Token));
-                musicCheck.Text = "Music on";
+                musicCheck.Text = "Music On";
             }
             else
             {
                 // Stop playing background music
                 StopBackgroundMusic();
                 bgPlaying = false;
-                musicCheck.Text = "Music off";
+                musicCheck.Text = "Music Off";
             }
-
         }
-
         // Define card parameters
         public class Card
         {
@@ -164,7 +160,6 @@ namespace BlackJack
                 CardImage = cardImage;
             }
         }
-
         // Defines card images
         Image kingHearts = Properties.Resources.kingHearts;
         Image queenHearts = Properties.Resources.queenHearts;
@@ -285,26 +280,22 @@ namespace BlackJack
 
             return;
         }
-
         //This reduces the player's bet from the player's available money
         //If player tries to bet zero, prompt for a wager
         //If player tries to bet more than they have, display error message
         public bool ValidateBet()
         {
             playerBet = Convert.ToInt32(Bet.Value);
-
             if (playerBet <= 0)
             {
                 MessageBox.Show("Make a bet!");
                 return false;
-
             }
             else if (playerMoney < playerBet)
             {
                 MessageBox.Show("Not enough money!");
                 return false;
             }
-
             ReduceFunds();
             return true;
         }
@@ -313,14 +304,18 @@ namespace BlackJack
         {
             playerMoney -= playerBet;
         }
-        // Updates the Money count
+        // Updates the UI Money count
         public void UpdateMoneyCount()
         {
             moneyCount.Text = ($"Funds: {playerMoney} $");
         }
-
+        // Updates UI points
+        public void UpdatePointTotals()
+        { 
+            playerScore.Text = ($"Player: {playerSum}");
+            dealerScore.Text = ($"Dealer: {dealerSum}");
+        }
         //This assigns functions to the "Deal" button
-        //It hides the "deal" button and shows the "hit" and "stand" buttons
         private void dealButton_Click(object sender, EventArgs e)
         {
             if (!ValidateBet())
@@ -336,6 +331,8 @@ namespace BlackJack
             hitButton.Visible = true;
             standButton.Enabled = true;
             standButton.Visible = true;
+            doubleButton.Enabled = true;
+            doubleButton.Visible = true;
         }
         //This randomly picks the first set of four cards
         public void dealCards()
@@ -345,20 +342,27 @@ namespace BlackJack
             PlayerHand.Add(firstPlayerCard);
             Deck.RemoveAt(firstP);
             playerFirst.Image = firstPlayerCard.CardImage;
+            DealerCount();
+            PlayerCount();
+            UpdatePointTotals();
 
-            int secondP = random.Next(Deck.Count);
-            Card secondPlayerCard = Deck[secondP];
-            PlayerHand.Add(secondPlayerCard);
-            Deck.RemoveAt(secondP);
-            playerSecond.Image = secondPlayerCard.CardImage;
-
-            playerSum = PlayerHand.Sum(card => card.PointValue);
 
             int firstD = random.Next(Deck.Count);
             Card firstDealerCard = Deck[firstD];
             DealerHand.Add(firstDealerCard);
             Deck.RemoveAt(firstD);
             dealerFirst.Image = firstDealerCard.CardImage;
+            DealerCount();
+            PlayerCount();
+            UpdatePointTotals();
+
+            int secondP = random.Next(Deck.Count);
+            Card secondPlayerCard = Deck[secondP];
+            PlayerHand.Add(secondPlayerCard);
+            Deck.RemoveAt(secondP);
+            playerSecond.Image = secondPlayerCard.CardImage;
+            PlayerCount();
+            UpdatePointTotals();
 
             int secondD = random.Next(Deck.Count);
             Card secondDealerCard = Deck[secondD];
@@ -366,34 +370,52 @@ namespace BlackJack
             pocketCard = secondDealerCard;
             Deck.RemoveAt(secondD);
             dealerSecond.Image = cardBack;
-        }
+            UpdatePointTotals();
 
-        //this deals additional cards to the player
+            playerSum = PlayerHand.Sum(card => card.PointValue);
+            if (playerSum == 21)
+            {
+                MessageBox.Show("Blackjack!");
+                BlackJack = true;
+                Stand();
+            }
+        }
+        // This deals additional cards to the player
         public void Hit()
         {
-            //deals another card to player
             int hitMe = random.Next(Deck.Count);
             Card newPlayerCard = Deck[hitMe];
             PlayerHand.Add(newPlayerCard);
             Deck.RemoveAt(hitMe);
+            PlayerCount();
+            UpdatePointTotals() ;
 
-            //finds next empty box and adds the card
+            // Finds next empty box and adds the card
             PictureBox emptyBox = EmptyBoxPlayer();
             if (emptyBox != null)
             {
                 emptyBox.Image = newPlayerCard.CardImage;
             }
-
-            //Checks the sum of the player's hand
-            playerSum = 0;
             foreach (Card card in PlayerHand)
             {
-                playerSum += card.PointValue;
+                if (card.PointValue == 11)
+                {
+                    aceCountPlayer++;
+                }
+            }
+            //Checks the sum of the player's hand
+            playerSum = 0;
+            CheckPlayerSum();
+            while (playerSum > 21 && aceCountPlayer > 0)
+            {
+                playerSum -= 10; // Convert Ace from 11 to 1
+                aceCountPlayer--; // Reduce ace count
             }
             if (playerSum > 21)
             {
                 Task.Run(() => PlaySoundEffect("FailSound2.wav"));
                 MessageBox.Show("Bust! You lose!");
+                CheckMoney();
                 ClearTable();
                 hitButton.Enabled = false;
                 hitButton.Visible = false;
@@ -418,26 +440,45 @@ namespace BlackJack
             DealerHand.Add(newDealerCard);
             Deck.RemoveAt(newD);
 
+            DealerCount();
+            UpdatePointTotals();
+
             PictureBox emptyBox = EmptyBoxDealer();
             if (emptyBox != null)
             {
                 emptyBox.Image = newDealerCard.CardImage;
             }
-        }
 
+        }
         //This assigns function to the Hit button
         private void hitButton_Click(object sender, EventArgs e)
         {
+            doubleButton.Enabled = false;
+            doubleButton.Visible = false;
             Task.Run(() => PlaySoundEffect("cardsound4.wav"));
             Hit();
-            // Play the card sound when the hitButton is clicked
+        }
+        // Adjust for aces
+        private void AdjustForDealerAces()
+        {
+            while (dealerSum > 21 && aceCountDealer > 0)
+            {
+                dealerSum -= 10;
+                aceCountDealer--;
+            }
+        }
+        private void AdjustForPlayerAces()
+        {
+            while (playerSum > 21 && aceCountPlayer > 0)
+            {
+                playerSum -= 10;
+                aceCountPlayer--;
+            }
         }
 
         // Finds first empty player box
         private PictureBox EmptyBoxPlayer()
         {
-            // Lists all available player boxes
-            //
             List<PictureBox> playerBoxes = new List<PictureBox>
             {
                 playerFirst,
@@ -457,10 +498,10 @@ namespace BlackJack
                 }
             }
             //returns null if all eight boxes are full
-            MessageBox.Show("Eight is plenty!");
+            MessageBox.Show("Only 0.027% of hands dealt can have more than eight cards!\n" +
+                "Unfortunately, this program does not support that eventuality!");
             return null;
         }
-
         //finds first empty dealer box
         private PictureBox EmptyBoxDealer()
         {
@@ -475,7 +516,6 @@ namespace BlackJack
                 dealerSeventh,
                 dealerEighth
             };
-
             foreach (PictureBox box in dealerBoxes)
             {
                 if (box.Image == null)
@@ -483,12 +523,11 @@ namespace BlackJack
                     return box;
                 }
             }
-            MessageBox.Show("No more!");
+            MessageBox.Show("Only 0.027% of hands dealt can have more than eight cards!\n" +
+                "Unfortunately, this program does not support that eventuality!");
             return null;
         }
-
-        // Resets all picture boxes and controls
-        // resets the deck
+        // Resets gamestate
         private void ClearTable()
         {
             List<PictureBox> allBoxes = new List<PictureBox>
@@ -510,7 +549,6 @@ namespace BlackJack
                 playerSeventh,
                 playerEighth
             };
-
             foreach (PictureBox box in allBoxes)
             {
                 box.Image = null;
@@ -518,66 +556,59 @@ namespace BlackJack
             PlayerHand.Clear();
             DealerHand.Clear();
             Deck.Clear();
-
             GenerateDeck();
             BlackJack = false;
             playerSum = 0;
-            aceCount = 0;
             dealerSum = 0;
+            aceCountPlayer = 0;
+            aceCountDealer = 0;
+            playerScore.Text = "";
+            dealerScore.Text = "";
             hitButton.Enabled = false;
             hitButton.Visible = false;
             standButton.Enabled = false;
             standButton.Visible = false;
             dealButton.Enabled = true;
             dealButton.Visible = true;
+            doubleButton.Enabled = false;
+            doubleButton.Visible = false;
             UpdateMoneyCount();
         }
         // Stand button functionality
         private void standButton_Click(object sender, EventArgs e)
         {
+            doubleButton.Enabled = false;
+            doubleButton.Visible = false;
             Stand();
         }
-
-        // Variable for checking dealer's total
-        int dealerSum = 0;
         private void Stand()
         {
             dealerSecond.Image = pocketCard.CardImage;
-
+            DealerCount();
+            UpdatePointTotals();
             //Checks the sum of the dealer's hand
-
             {
                 dealerSum = DealerHand.Sum(card => card.PointValue);
+                DealerCount();
 
-                if (dealerSum > 21)
-                {
-                    Task.Run(() => PlaySoundEffect("WINsound1.wav"));
-                    MessageBox.Show("House busts! \n You win!");
-                    PayOut();
-                    ClearTable();
-                    return;
-                }
                 //dealer draws a card, repeat until over 16
                 while (dealerSum <= 16)
                 {
                     dealerHit();
-                    dealerSum += DealerHand.Last().PointValue;
-
+                    DealerCount();
                     if (dealerSum > 21)
                     {
                         Task.Run(() => PlaySoundEffect("WINsound1.wav"));
-                        MessageBox.Show("House busts! \n You win!");
+                        MessageBox.Show("House busts! \nYou win!");
                         PayOut();
-                        ClearTable();
+                        //ClearTable();
                         return;
                     }
                 }
                 CompareHands();
-                ClearTable();
                 return;
             }
         }
-
         public void CompareHands()
         {
             if (playerSum > dealerSum)
@@ -590,30 +621,177 @@ namespace BlackJack
             {
                 MessageBox.Show("Draw!");
                 playerMoney += playerBet;
+                ClearTable();
             }
             else
             {
                 Task.Run(() => PlaySoundEffect("FailSound2.wav"));
                 MessageBox.Show("House wins!");
+                CheckMoney();
                 ClearTable();
             }
 
         }
-
         // pays winnings to player
         private void PayOut()
         {
             if (BlackJack == true)
             {
                 playerMoney += (playerBet * 3);
-                ClearTable();
             }
+            else if (dealerSum > 21)
+                playerMoney += (playerBet * 2);
             else
             {
                 playerMoney += (playerBet * 2);
             }
+            ClearTable();
         }
+        private void GameLost() //put this after the loss
+        {
+            if (MessageBox.Show("You have no money left. Would you like to start over again?",
+                "Game Over", MessageBoxButtons.YesNo, MessageBoxIcon.Error) == DialogResult.No)
+            {
+                if (MessageBox.Show("Are you sure sure about that?",
+                    "Are you sure about that?", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
+                {
+                    if (MessageBox.Show("For realzies?",
+                    " ", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
+                    {
+                        Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("^ v ^ ~");
+                        playerMoney = 100;
+                        ClearTable();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("^ v ^ ~");
+                    playerMoney = 100;
+                    ClearTable();
+                }
+            }
+            else
+            {
+                playerMoney = 100;
+                ClearTable();
+            }
+        }
+        private void CheckMoney()
+        {
+            if (playerMoney == 0)
+            {
+                GameLost();
+            }
+        }
+        private void PlayerCount()
+        {
+            playerSum = 0;
+            aceCountPlayer = 0;
+            foreach (Card card in PlayerHand)
+            {
+                playerSum += card.PointValue;
+                if (card.PointValue == 11)
+                {
+                    aceCountPlayer++;
+                }
+                AdjustForPlayerAces();
+            }
+        }
+        private void DealerCount()
+        {
+            dealerSum = 0;
+            aceCountDealer = 0;
+            foreach (Card card in DealerHand)
+            {
+                dealerSum += card.PointValue;
+                if (card.PointValue == 11)
+                {
+                    aceCountDealer++;
+                }
+                AdjustForDealerAces();
+            }
+        }
+        private void doubleButton_Click(object sender, EventArgs e)
+        {
+            if (playerMoney >= playerBet)
+            {
+                playerBet *= 2;
+                ReduceFunds();
+                UpdateMoneyCount();
+                //deals another card to player
+                int hitMe = random.Next(Deck.Count);
+                Card newPlayerCard = Deck[hitMe];
+                PlayerHand.Add(newPlayerCard);
+                Deck.RemoveAt(hitMe);
+                CheckPlayerSum();
+                PlayerCount();
+                UpdatePointTotals();
 
+                //finds next empty box and adds the card
+                PictureBox emptyBox = EmptyBoxPlayer();
+                if (emptyBox != null)
+                {
+                    emptyBox.Image = newPlayerCard.CardImage;
+                }
+                foreach (Card card in PlayerHand)
+                {
+                    if (card.PointValue == 11)
+                    {
+                        aceCountPlayer++;
+                    }
+                    while (playerSum > 21 && aceCountPlayer > 0)
+                    {
+                        playerSum -= 10; // Convert Ace from 11 to 1
+                        aceCountPlayer--; // Reduce ace count
+                        CheckPlayerSum();
+                        PlayerCount();
+                        UpdatePointTotals();
+                    }
+                }
+            if (playerSum > 21)
+                {
+                    Task.Run(() => PlaySoundEffect("FailSound2.wav"));
+                    MessageBox.Show("Bust! You lose!");
+                    CheckMoney();
+                    ClearTable();
+                    return;
+                }
+                else if (playerSum == 21)
+                {
+                    MessageBox.Show("Blackjack!");
+                    BlackJack = true;
+                    Stand();
+                }
+                else
+                {
+                    Stand();
+                }
 
+            }
+            else
+            {
+                MessageBox.Show("Not enough money to double down!");
+            }
+        }
+        public void CheckPlayerSum()
+        {
+            playerSum = 0;
+            foreach (Card card in PlayerHand)
+            {
+                playerSum += card.PointValue;
+            }
+        }
+        public void CheckDealerSum()
+        {
+            dealerSum = 0;
+            foreach (Card card in DealerHand)
+            {
+                dealerSum += card.PointValue;
+            }
+        }
     }
 }
